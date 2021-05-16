@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block titulo %}Inicio{% endblock %}
+
+{% block script %}{% endblock %} 
+
+{% block estilos %}
+  <link rel="stylesheet" href="/static/css/estiloIndexNav.css">
+{% endblock %} 
+
+{% block encabezado %}
+<section class="jumbotron">
+    <h3>Bienvenido a la plataforma de verificiacion de Firmas Digitales</h3>
+</section>
+{% endblock %}
+
+{% block barra %}
+    <nav class="nav nav-pills nav-justified">
+        <a id='boton' class="nav-link" href="{% url 'login' %}">Ingresa</a>
+        <a id='boton' class="nav-link" href="{% url 'registro' %}">Registrate</a>  
+    </nav>
+       
+{% endblock %}
+
+{% block contenido %}
+<section class="container">
+    <article class="col">
+        <p class="text-justify">Una firma digital es un mecanismo criptográfico que permite al receptor de un mensaje firmado digitalmente identificar a la entidad originadora de dicho mensaje (autenticación de origen y no repudio), 
+         y confirmar que el mensaje no ha sido alterado desde que fue firmado por el originador (integridad).</p>
+    </article>
+    <article class="col-lg-6">
+        <header>
+            <h3>Terminología</h3>
+        </header>
+        <ul>
+            <li>
+                <p class="text-justify">Un algoritmo de generación de firma digital, también llamado simplemente algoritmo de generación de firma, es un método para producir firmas digitales.</p>
+            </li>
+            <li>
+                <p class="text-justify">Un algoritmo de verificación de firma digital, también llamado simplemente algoritmo de verificación, es un método que permite la verificación de que una firma digital es auténtica.</p>
+            </li>
+            <li>
+                <p class="text-justify" >Un esquema o mecanismo de firma digital consiste en un algoritmo de generación de firma y su algoritmo de verificación asociado</p>
+            </li>
+        </ul>
+        
+    </article>
+</section>
+
+<!-- hola si encontraste esto eres un crack que no le hace al crack-->
+{% endblock %}

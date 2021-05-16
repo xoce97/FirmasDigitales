@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block titulo %}Registro Usuarios{% endblock %}
+
+{% block script %}{% endblock %} 
+
+{% block estilos %}
+  <link rel="stylesheet" href="/static/css/estiloRegistroU.css">
+{% endblock %}
+
+{% block encabezado %}
+<section class="jumbotron">
+    <h3>Registro de Usuarios</h3>
+</section>
+{% endblock %}
+
+{% block barra %}
+    <nav class="nav nav-pills nav-justified">
+        <a id="botonRegistro" class="nav-link" href="{% url 'index' %}">Inicio</a>
+        <a id="botonRegistro" class="nav-link" href="{% url 'login' %}">Ingresa</a>    
+    </nav>
+{% endblock %}
+
+{% block contenido %}
+<section class="container">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col">
+                <label>Nombre Completo :</label>
+                <input type="text" class="form-control" name="nombre" placeholder="Ingresa tu nombre completo" required>
+            </div>
+            <div class="col">
+                <label>Nick-Name :</label>
+                <input type="text" class="form-control" name="nickname" placeholder="USER777" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label>Contraseña :</label>
+                <input type="password" class="form-control" name="contraseña" placeholder="Contraseña" required>
+            </div>
+            <div class="col">
+                <label>Confirmación de Contraseña :</label>
+                <input type="password" class="form-control" name="Ccontraseña" placeholder="Repite la Contraseña anterior" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label>Correo electrónico</label>
+                <input type="email" class="form-control" name="correo" placeholder="example@example.com" required >
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="submit" class="btn btn-outline-success btn-block">Registrar</button>
+            </div>
+        </div>
+    </form>
+</section>
+{% endblock %}
+
+
+ 
+

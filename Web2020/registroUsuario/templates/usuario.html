@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block titulo %}Inicio Usuario{% endblock %}
+
+{% block script %}{% endblock %} 
+
+{% block estilos %}
+  <link rel="stylesheet" href="/static/css/estiloUsuario.css">
+{% endblock %}
+
+{% block encabezado %}
+    <section id="" class="jumbotron">
+        <h3>Bienvenido Usuario</h3>
+    </section>
+{% endblock %}
+
+{% block barra %}
+<nav class="nav nav-pills nav-justified">
+    <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesion</a>
+    <a class="nav-link" href="{% url 'Firmar' %}">Firmar Archivo</a>
+    <a class="nav-link" href="{% url 'Verificar' %}">Verificar Firma</a>
+</nav>
+{% endblock %}
+
+{% block contenido %}
+<section class="container">
+    <article>
+        <p>Este es la pagina de inicio del usuario esta solo se pude ver cuando iniciamos sesion</p>
+        <a class="nav-link" href="{% url 'Renovar' %}">Renovar  LLaves</a>
+    </article>
+</section>
+{% endblock %}

@@ -1,0 +1,14 @@
+#botonRegistro {
+    background-color: gray;
+    color: orange;
+}
+.jumbotron {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    color:royalblue;
+    background-color: rgb(200, 200,200);
+}
+body{
+    background-color: beige;
+}

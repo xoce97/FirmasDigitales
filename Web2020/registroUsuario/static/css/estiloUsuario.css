@@ -1,0 +1,14 @@
+.jumbotron {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    color:greenyellow;
+    background-color: rgb(60, 120,150);
+}
+.nav-link{
+    background-color: gray;
+    color: orange;
+}
+body {
+ background-color: beige;
+}

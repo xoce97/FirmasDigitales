@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block titulo %}Firma Documentos{% endblock %}
+{% block script %}
+    <!-- <script src="/static/js/cambiaColores.js"></script> --> 
+{% endblock %} 
+{% block estilos %}
+   <link rel="stylesheet" href="/static/css/estiloFirma.css">
+{% endblock %}
+{% block encabezado %}
+<section id="" class="jumbotron" style="background:beige;">
+    <h3>Firma de Documentos</h3>
+</section>
+{% endblock %}
+
+{% block barra %}
+<nav class="nav nav-pills nav-justified">
+    <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesion</a>
+    <a class="nav-link" href="{% url 'usuarioInicio' %}">Inicio</a>
+    <a class="nav-link" href="{% url 'Verificar' %}">Verificar Firma</a>
+</nav>
+{% endblock %}
+{% block contenido %}
+{% if url %}
+    <section class="container">
+        <article class="alert alert-success">
+            <p id="url"><h3>Archivo firmado:</h3><a id="link" href="{{ url }}">{{ url }}</a> </p>
+        </article>
+    </section>
+{% endif %}
+<section class="container">
+    <form  id="formularioArchivo" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-9">
+                <label for="archivo">Selecciona el Archivo:</label>
+                <input type="file" name="archivo" required>
+            </div>
+            <div class="col-6">
+                <label for="contraseñaFirma">Ingresa la contraseña para poder firma</label>
+                <input type="password" class="form-control" id="contraseña" placeholder="Enter password" name="contraseña" required>
+            </div>
+        </div>
+        <button id='botonArchivo' type="submit">Subir Archivo</button>
+    </form>
+</section>
+{% endblock %}

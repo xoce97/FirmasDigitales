@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block titulo %}LogIn{% endblock %}
+{% block script %}{% endblock %} 
+
+{% block estilos %}
+  <link rel="stylesheet" href="/static/css/estiloLogin.css">
+{% endblock %}
+
+{% block encabezado %}
+<section class="jumbotron">
+  <h3>Inicio de Sesion</h3>
+</section>
+{% endblock %}
+
+{% block barra %}
+  <nav class="nav nav-pills nav-justified">
+    <a id="botonLogin" class="nav-link"  href="{% url 'index' %}">Inicio</a>
+    <a id="botonLogin" class="nav-link"  href="{% url 'registro' %}">Registrate</a>
+  </nav>
+{% endblock %}
+
+{% block contenido %}
+
+<section class="container">
+  <form method="POST">
+    {% csrf_token %}
+      <div class="row">
+        <div class="col-sm-6">
+          <label for="nickname">Nick:</label>
+          <input class="form-control" type="text" id="nickname" placeholder="Enter NickName" name="nickname" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-7">
+          <label for="pwd">Contraseña:</label>
+          <input class="form-control" type="password" id="pwd" placeholder="Enter password" name="contraseña" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button id="boton" type="submit" class="btn btn-primary">Ingresar</button>
+        </div>
+      </div>
+  </form>
+</section>
+{% if errores %}
+  {% for error in errores %}
+    <div id="error" class="alert alert-danger">
+      <strong>{{error}}</strong> 
+    </div>
+  {% endfor %}
+{% endif %}
+{% endblock %}
+

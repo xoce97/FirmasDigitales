@@ -1,0 +1,22 @@
+.jumbotron {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    color:royalblue;
+    background-color: rgb(150, 150,200);
+}
+.nav-link{
+    background-color: gray;
+    color: orange;
+}
+body{
+    background-color: beige;
+}
+button {
+    background-color:lawngreen;
+    color: red;
+    position: relative;
+    left: 0px;
+    bottom:-50px;
+    border: 3px solid #5c6dd1;
+}
